@@ -106,8 +106,31 @@ joblib.dump(model, r'Model/model.pickle')
 joblib.dump(col_transformer, r'Scaler/scaler.pickle')
 ```
 
+9- Using the exported model for new data
+
+```
+import joblib
+model = joblib.load(r'Model/model.pickle')
+scaler = joblib.load(r'Scaler/scaler.pickle')
 
 
+import pandas as pd
+new_data = pd.DataFrame([{'R&D Spend':'155349.2', 'Administration':'126897.8', 'Marketing Spend':'471784.1', 'State':'New York'},{'R&D Spend':'165349.2', 'Administration':'136897.8', 'Marketing Spend':'471784.1', 'State':'New York'}])
+
+# new_data = pd.DataFrame([])
+
+
+new_data = new_data[['R&D Spend','Administration','Marketing Spend','State']]
+
+print(new_data)
+
+# Normalize and add the missing values automatically
+new_data = scaler.transform(new_data)
+
+pre = model.predict(new_data)
+
+print(pre)
+```
 
 
 
