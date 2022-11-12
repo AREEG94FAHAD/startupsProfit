@@ -90,6 +90,27 @@ plt.scatter(y_test,y_pred)
 plt.xlabel('Actual')
 plt.ylabel('Predicted')
 ```
+8- export the model
+
+```
+import joblib
+
+import os
+
+if not os.path.exists('Model'):
+        os.mkdir('Model')
+if not os.path.exists('Scaler'):
+        os.mkdir('Scaler')
+
+joblib.dump(model, r'Model/model.pickle') 
+joblib.dump(col_transformer, r'Scaler/scaler.pickle')
+```
+
+
+
+
+
+
 
 Results
 <hr>
