@@ -1,6 +1,5 @@
 # startupsProfit
-A multi-linear regression system to estimate the profit of startups in three states in America
-
+A multi-linear regression system to estimate the profit of startups in three states in America.
 
 
 #### Independent variables are
